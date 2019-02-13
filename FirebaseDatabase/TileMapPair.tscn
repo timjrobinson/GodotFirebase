@@ -1,0 +1,46 @@
+[gd_scene format=2]
+
+[node name="TileMapUpload" type="HBoxContainer"]
+margin_right = 508.0
+margin_bottom = 44.0
+size_flags_horizontal = 4
+
+[node name="Scene" type="LineEdit" parent="."]
+margin_right = 100.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 100, 44 )
+expand_to_text_length = true
+placeholder_text = "Scene path"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Tilemap" type="LineEdit" parent="."]
+margin_left = 104.0
+margin_right = 304.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 200, 44 )
+expand_to_text_length = true
+placeholder_text = "Tilemap path in scene"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Firebase" type="LineEdit" parent="."]
+margin_left = 308.0
+margin_right = 508.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 200, 44 )
+expand_to_text_length = true
+placeholder_text = "Firebase Path"
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Name" type="LineEdit" parent="."]
+margin_left = 512.0
+margin_right = 712.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 200, 44 )
+expand_to_text_length = true
+placeholder_text = "Tilemap Name"
+caret_blink = true
+caret_blink_speed = 0.5
+

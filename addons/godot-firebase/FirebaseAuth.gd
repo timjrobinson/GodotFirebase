@@ -81,6 +81,19 @@ func _on_FirebaseAuth_request_completed(result, response_code, headers, body):
     else:
         # error message would be INVALID_EMAIL, EMAIL_NOT_FOUND, INVALID_PASSWORD, USER_DISABLED or WEAK_PASSWORD
         emit_signal("login_failed", res.error.code, res.error.message)
+        
+# Function is called when requesting a manual token refresh
+func manual_token_refresh(auth_data):
+	auth = auth_data
+	var refresh_token = null
+	auth = get_clean_keys(auth)
+	if auth.has("refreshtoken"):
+		refresh_token = auth.refreshtoken
+	elif auth.has("refresh_token"):
+		refresh_token = auth.refresh_token
+	needs_refresh = true
+	refresh_request_body.refresh_token = refresh_token
+	request(refresh_request_url, ["Content-Type: application/json"], true, HTTPClient.METHOD_POST, JSON.print(refresh_request_body))
 
 # Function is called when a new token is issued to a user. The function will yield until the token has expired, and then request a new one.
 func begin_refresh_countdown():
